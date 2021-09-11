@@ -1,8 +1,8 @@
 export interface Register {
-    name:string;
+    username:string;
     password:string;
 }
 export interface Login{
-    name:string;
+    username:string;
     password:string;
 }

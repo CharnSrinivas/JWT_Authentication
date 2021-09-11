@@ -1,8 +1,7 @@
 import { MongoClient, Db } from 'mongodb';
-
 const DB_Name = 'app';
-const url = `mongodb+srv://admin:admin@ecommerceapp.o1vye.mongodb.net/EcommerceApp?retryWrites=true&w=majority`;
-
+const ClusterName = "EcommerceApp";
+const url = 'mongodb://127.0.0.1:27017'
 
 export default class MongoHelper {
     public static client: MongoClient | undefined;
@@ -18,19 +17,16 @@ export default class MongoHelper {
                         this.client = client;
                         console.log('Connected successfully to server');
                         this.db = this.client.db(db_name ? db_name : DB_Name);
-                        this.db.collection('Users').insertOne({data:"test"})
                         resolve(this.db);
                     })
                     .catch((err) => {
                         console.error(err);
                         reject(false);
                     })
-
             } catch (error) {
                 console.error(error)
                 reject(false);
             }
-
         })
 
     }

@@ -1,6 +1,8 @@
 POST http://127.0.0.1:5000/register
-Content-Type: application/json
+
+Content-Type: application/json;
+
 {
-     "name":"Charan srinivas";
-    "password":"thisispassword";
+    "name":"Charan srinivas",
+    "password":"thisispassword"
 }
